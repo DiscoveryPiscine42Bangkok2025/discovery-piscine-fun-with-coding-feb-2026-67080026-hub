@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon Exercise</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.2s; /* Smooth color transition */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const colors = ['red', 'green', 'blue'];
+        
+        let currentSize = 200;
+        let colorIndex = 0;
+
+        function updateBalloon() {
+            balloon.style.width = currentSize + 'px';
+            balloon.style.height = currentSize + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        // Click Event: Grow and Cycle Colors Forward
+        balloon.addEventListener('click', () => {
+            currentSize += 10;
+            if (currentSize > 420) {
+                currentSize = 200;
+                colorIndex = 0; // Reset to red on explode
+            } else {
+                colorIndex = (colorIndex + 1) % colors.length;
+            }
+            updateBalloon();
+        });
+
+        // Mouse Leave Event: Shrink and Cycle Colors Backward
+        balloon.addEventListener('mouseleave', () => {
+            if (currentSize > 200) {
+                currentSize -= 5;
+                // Reverse color logic: (index - 1 + length) % length
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            }
+            updateBalloon();
+        });
+    </script>
+</body>
+</html>

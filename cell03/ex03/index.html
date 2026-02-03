@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do or Not To Do</title>
+    <style>
+        /* จัดการพื้นหลังและฟอนต์ */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        /* ตกแต่งปุ่ม "New" */
+        #new_btn {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        #new_btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+        }
+
+        /* กล่องบอร์ดรายการ ft_list */
+        #ft_list {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* ตกแต่งแผ่นรายการ TO DO (แต่ละ Div) */
+        #ft_list div {
+            background-color: white;
+            padding: 15px 20px;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            word-wrap: break-word;
+            position: relative;
+        }
+
+        /* เอฟเฟกต์ตอน Hover เตรียมลบ */
+        #ft_list div:hover {
+            background-color: #fff5f5;
+            border-left: 5px solid #e74c3c;
+            transform: scale(1.02);
+        }
+
+        /* แสดงข้อความบอกให้รู้ว่าคลิกเพื่อลบได้ */
+        #ft_list div:hover::after {
+            content: "Delete?";
+            font-size: 11px;
+            color: #e74c3c;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+
+    <button id="new_btn">New</button>
+    
+    <div id="ft_list"></div>
+
+    <script src="todo.js"></script>
+    
+</body>
+</html>

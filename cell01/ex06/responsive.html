@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* 2. The CSS "No-JS" Magic for Mobile */
+@media screen and (max-width: 600px) {
+  /* Force the table to not behave like a table anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Hide table headers (but keep them for screen readers) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border: 2px solid #ccc;
+  }
+
+  td {
+    /* Make cells behave like a "row" with a label */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; 
+  }
+
+  td:before {
+    /* Use the 'data-label' attribute to create headers */
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+    </style>
+</head>
+<body>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Cell 1</th>
+            <th>Cell 2</th>
+            <th>Cell 3</th>
+            <th>Cell 4</th>
+            <th>Cell 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Cell 1">Data 1A</td>
+            <td data-label="Cell 2">Data 2A</td>
+            <td data-label="Cell 3">Data 3A</td>
+            <td data-label="Cell 4">Data 4A</td>
+            <td data-label="Cell 5">Data 5A</td>
+          </tr>
+          <tr>
+            <td data-label="Cell 1">Data 1B</td>
+            <td data-label="Cell 2">Data 2B</td>
+            <td data-label="Cell 3">Data 3B</td>
+            <td data-label="Cell 4">Data 4B</td>
+            <td data-label="Cell 5">Data 5B</td>
+          </tr>
+        </tbody>
+      </table>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator ex02</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4;
+        }
+        .calc-container { 
+            background: white;
+            border: 2px solid #333; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        input, select { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-container">
+        <input type="text" id="leftMember" placeholder="Left value">
+        
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <input type="text" id="rightMember" placeholder="Right value">
+        
+        <input type="submit" id="submitBtn" value="Try me!">
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // 30-second interval alert
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+
+            $('#submitBtn').on('click', function() {
+                // Fetch values using jQuery .val()
+                const leftStr = $('#leftMember').val().trim();
+                const rightStr = $('#rightMember').val().trim();
+                const op = $('#operator').val();
+
+                // Validation: Positive integers only
+                if (!isPositiveInteger(leftStr) || !isPositiveInteger(rightStr)) {
+                    alert('Error :(');
+                    return;
+                }
+
+                const left = parseInt(leftStr, 10);
+                const right = parseInt(rightStr, 10);
+
+                // Zero division/modulo check
+                if ((op === '/' || op === '%') && right === 0) {
+                    const msg = "It’s over 9000!";
+                    console.log(msg);
+                    alert(msg);
+                    return;
+                }
+
+                // Math logic
+                let result;
+                switch (op) {
+                    case '+': result = left + right; break;
+                    case '-': result = left - right; break;
+                    case '*': result = left * right; break;
+                    case '/': result = left / right; break;
+                    case '%': result = left % right; break;
+                }
+
+                console.log(result);
+                alert(result);
+            });
+
+            // Helper to ensure input is a non-negative whole number
+            function isPositiveInteger(str) {
+                if (str === "") return false;
+                // Regex ensures only digits are present (prevents decimals/negatives)
+                return /^\d+$/.test(str);
+            }
+        });
+    </script>
+</body>
+</html>

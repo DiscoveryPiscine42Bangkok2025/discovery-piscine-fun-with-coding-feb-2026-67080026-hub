@@ -1,0 +1,52 @@
+/* ตั้งค่าพื้นฐานให้หน้าเว็บแสดงผลเต็มจอ */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Helvetica", sans-serif;
+}
+
+/* ตั้งค่าส่วน Parallax */
+.parallax {
+    /* กำหนดความสูงให้เต็มหน้าจอพอดี */
+    height: 100vh; 
+
+    /* เทคนิค Parallax: ล็อคภาพพื้นหลังไว้ */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ใส่รูปภาพที่ 1 และ 2 */
+.img1 {
+    background-image: url('https://img.wattpad.com/f199965b9860db352f37c6737f2ad927f2444f90/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6141352d414b766b3848526f5a413d3d2d313131383739323234302e313639643537653261383438333238343633393033393432323938362e6a7067');
+}
+
+.img2 {
+    background-image: url('https://pbs.twimg.com/media/E195XahXoAc9aKe.jpg');
+}
+
+/* จัดวางข้อความให้อยู่ตรงกลางภาพ */
+.caption {
+    position: relative;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+}
+
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+/* บล็อกสีดำคั่นกลาง */
+.black-block {
+    color: #ddd;
+    background-color: #000; /* สีดำตามโจทย์ */
+    text-align: center;
+    padding: 100px 50px;
+}

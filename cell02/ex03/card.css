@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.card {
+    background-color: #FFD8DF;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 250px;
+}
+
+/* The "Invisible" Table */
+.profile-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.description {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.socials img {
+    margin: 0 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.socials img:hover {
+    transform: scale(1.2);
+}
+
+.contact-btn {
+    margin-top: 20px;
+    background-color: #BDE8F5;
+    color: #0F2854;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-btn:hover {
+    background-color: #EEEEEE;
+}

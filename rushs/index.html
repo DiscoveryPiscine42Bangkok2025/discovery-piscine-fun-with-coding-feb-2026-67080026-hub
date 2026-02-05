@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Nana & Baipai</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #F7F6D3;
+            --accent-brown: #896C6C;
+            --hover-brown: #703B3B;
+            --shadow-color: rgba(137, 108, 108, 0.2);
+        }
+
+        body {
+            background-color: #F7F6D3;
+            color: var(--accent-brown);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- Navigation --- */
+        .sncf-nav {
+            margin-top: 25px;
+            background-color: #896C6C;
+            padding: 5px 15px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px ;
+            z-index: 1000;
+        }
+
+        .menu-main {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .menu-item {
+            position: relative;
+        }
+
+        .menu-item > a {
+            display: block;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border-radius: 40px;
+        }
+
+        .menu-item:hover > a {
+            background-color: var(--hover-brown);
+            
+        }
+
+        /* Dropdown Submenu */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 160px;
+            background-color: white;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+            list-style: none;
+            padding: 10px;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--accent-brown);
+            text-decoration: none;
+            transition: background 0.2s;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .submenu li a:hover {
+            background-color: #fcfcf0;
+            color: var(--hover-brown);
+        }
+
+        .menu-item:hover .submenu {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* --- Portfolio Content --- */
+        .portfolio-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px;
+            padding: 40px 20px;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        h1 {
+            font-weight: 800;
+            letter-spacing: 5px;
+            margin-bottom: 60px;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            text-transform: uppercase;
+        }
+
+        .profile-card {
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .img-container {
+            overflow: hidden;
+            border-radius: 20px;
+            aspect-ratio: 1 / 1;
+            box-shadow: 0 10px 25px var(--shadow-color);
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-card:hover .img-container img {
+            transform: scale(1.1);
+        }
+
+        .name-label {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-top: 20px;
+            line-height: 1.4;
+            text-align: center;
+            color: #896C6C;
+        }
+
+        .lead {
+            font-style: italic;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .menu-item > a { padding: 10px 15px; font-size: 0.9rem; }
+            h1 { margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sncf-nav">
+        <ul class="menu-main">
+            <li class="menu-item">
+                <a href="#">Nana</a>
+                <ul class="submenu">
+                    <li><a href="profilenana.html">Profile</a></li>
+                    <li><a href="educationnana.html">Education</a></li>
+                    <li><a href="Interestnana.html">Interests</a></li>
+                    <li><a href="achievementsnana.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Baipai</a> 
+                <ul class="submenu">
+                    <li><a href="profilebaipai.html">Profile</a></li>
+                    <li><a href="educationbaipai.html">Education</a></li>
+                    <li><a href="interestbaipai.html">Interests</a></li>
+                    <li><a href="achievementsbaipai.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="index.html">H♡me</a> 
+            </li>
+        </ul>
+    </nav>
+
+    <div class="portfolio-container">
+        <h1>⋆. 𐙚˚࿔ PORTFOLIO 𝜗𝜚˚⋆</h1>
+        
+        <div class="row g-5 justify-content-center w-100">
+            <div class="col-10 col-sm-6 col-md-5 profile-card">
+                <a href="profilenana.html" class="text-decoration-none color-inherit">
+                    <div class="img-container">
+                        <img src="https://media.discordapp.net/attachments/1468602344077000725/1468630063099412545/IMG_6564.jpg?ex=69856094&is=69840f14&hm=7a4238688ace69322578d1a244af2ee24114d1bd46a4376648021faa8ffc93e1&=&format=webp&width=1662&height=1662" alt="Nana">
+                    </div>
+                    <div class="name-label">
+                        Kankamon Banthoengjai<br>
+                        <span style="font-weight: 400; opacity: 0.7;">(Nana)</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-10 col-sm-6 col-md-5 profile-card">
+                <a href="profilebaipai.html" class="text-decoration-none color-inherit">
+                    <div class="img-container">
+                        <img src="https://media.discordapp.net/attachments/1468904582162939956/1468932786428838083/original_2025-03-08_193447.685.jpg?ex=6985d1c3&is=69848043&hm=68920f2824f6c749e4677b664fedbb5852673b960af126c31623145d37af77f3&=&format=webp&width=1874&height=1874" alt="Baipai">
+                    </div>
+                    <div class="name-label">
+                        Jutamas Mayoo<br>
+                        <span style="font-weight: 400; opacity: 0.7;">(Baipai)</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <p class="lead">Tap a photo to explore our world.</p>
+        </div>
+    </div>
+
+</body>
+</html>

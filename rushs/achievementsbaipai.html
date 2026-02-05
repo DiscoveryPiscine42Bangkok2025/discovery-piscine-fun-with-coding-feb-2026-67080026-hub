@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Achievements</title>
+    <link rel="stylesheet" href="nana.css">
+    
+    <style>
+        body {
+            margin: 0;
+            padding-bottom: 50px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4A4A4A;
+            background-color: #CBDCEB;
+        }
+
+        .sncf-nav {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #896C6C;
+            padding: 5px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .menu-main {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-item { position: relative; }
+        .menu-item > a {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.1em;
+        }
+
+        .menu-item:hover > a { background-color: #703B3B; border-radius: 40px; }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 200px;
+            background-color: white;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 100;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #703B3B;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .submenu li a:hover { background-color: #F5EFE6; color: #B87C4C; }
+        .menu-item:hover .submenu { display: block; }
+
+        /* Achievements Content */
+        .profile-card {
+            max-width: 1000px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-card h1 {
+            color: #B87C4C;
+            font-size: 3rem;
+            font-family: 'Monospace', courier;
+            margin-bottom: 50px;
+            margin-top: 0;
+        }
+
+        .achievement-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .achievement-item {
+            flex: 1;
+            min-width: 280px;
+            padding: 20px;
+            background: #fff;
+            border: 2px solid #F3F3E0;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-10px);
+            border-color: #B87C4C;
+            box-shadow: 0 10px 20px rgba(184, 124, 76, 0.1);
+        }
+
+        .medal-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: #F7F6D3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: #703B3B;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-family: 'Monospace', courier;
+        }
+
+        .achievement-date {
+            font-size: 0.9rem;
+            color: #896C6C;
+            margin-bottom: 15px;
+            display: block;
+            font-style: italic;
+        }
+
+        .achievement-desc {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.5;
+            border-top: 1px dashed #CBDCEB;
+            padding-top: 15px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-style: italic;
+            font-family: monospace;
+            color: #896C6C;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-container { flex-direction: column; }
+            .achievement-item { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sncf-nav">
+        <ul class="menu-main">
+            <li class="menu-item">
+                <a href="#">Nana</a>
+                <ul class="submenu">
+                    <li><a href="profilenana.html">Profile</a></li>
+                    <li><a href="educationnana.html">Education</a></li>
+                    <li><a href="Interestnana.html">Interests</a></li>
+                    <li><a href="achievementsnana.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Baipai</a> 
+                <ul class="submenu">
+                    <li><a href="profilebaipai.html">Profile</a></li>
+                    <li><a href="educationbaipai.html">Education</a></li>
+                    <li><a href="interestbaipai.html">Interests</a></li>
+                    <li><a href="achievementsbaipai.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="index.html">H♡me</a> 
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-card">
+        <h1>Achievements</h1>
+
+        <div class="achievement-container">
+            <div class="achievement-item">
+                <div class="medal-icon">🫀</div>
+                <div class="achievement-title">Silver Medal</div>
+                <span class="achievement-date">2023</span>
+                <p class="achievement-desc">The 18th First time dissecting a heart. Such an eye-opening experience.</p>
+            </div>
+
+            <div class="achievement-item">
+                <div class="medal-icon">🧫</div>
+                <div class="achievement-title">Create a robot</div>
+                <span class="achievement-date">2022</span>
+                <p class="achievement-desc">The 9th It’s my first time trying to grow plants without soil.</p>
+            </div>
+
+            <div class="achievement-item">
+                <div class="medal-icon">🌟</div>
+                <div class="achievement-title">Accepted to University</div>
+                <span class="achievement-date">2024</span>
+                <p class="achievement-desc">I got into King Mongkut's Institute of Technology Ladkrabang.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            Designed with ❤️ from Baipai
+        </div>
+    </div>
+
+</body>
+</html>

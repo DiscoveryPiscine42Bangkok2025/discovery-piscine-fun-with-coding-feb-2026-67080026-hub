@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Education</title>
+
+    <style>
+        /* Specific Styles for the Education Page */
+        .profile-card {
+            max-width: 1200px; 
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .page-title {
+            color: #B87C4C;
+            font-size: 3.5rem;
+            font-family: 'Monospace', courier;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        .education-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .edu-column {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .edu-column:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Vertical Lines */
+        .edu-column:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: -15px;
+            top: 15%;
+            height: 70%;
+            width: 1px;
+            background-color: #ddd;
+        }
+
+        .edu-title {
+            font-family: 'Monospace', courier;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #703B3B;
+            text-transform: uppercase;
+        }
+
+        .school-star-box {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .school-star-box img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .edu-info {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 10px;
+            color: #555;
+            display: block;
+            min-height: 2.5em;
+        }
+
+        .edu-info.school-name {
+            font-weight: bold;
+            color: #333;
+            border-bottom: 2px solid #CBDCEB;
+            display: inline-block;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+        }
+
+        @media (max-width: 992px) {
+            .education-container { flex-direction: column; align-items: center; }
+            .edu-column::after { display: none !important; }
+            .edu-column { width: 100%; border-bottom: 1px solid #eee; padding-bottom: 40px; }
+        }
+
+        .sncf-nav {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #896C6C; /* Deep Warm Brown */
+    padding: 5px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #CBDCEB;
+}
+
+.menu-main {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item > a {
+    display: block;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1em;
+}
+
+.menu-item:hover > a {
+    background-color: #703B3B;
+    border-radius: 40px;
+}
+
+/* Submenu Styling */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 200px;
+    background-color: white;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 100;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #703B3B;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.submenu li a:hover {
+    background-color: #F5EFE6;
+    color: #B87C4C;
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+    </style>
+</head>
+<body>
+    <nav class="sncf-nav">
+        <ul class="menu-main">
+            <li class="menu-item">
+                <a href="#">Nana</a>
+                <ul class="submenu">
+                    <li><a href="profilenana.html">Profile</a></li>
+                    <li><a href="educationnana.html">Education</a></li>
+                    <li><a href="Interestnana.html">Interests</a></li>
+                    <li><a href="achievementsnana.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Baipai</a> 
+                <ul class="submenu">
+                    <li><a href="profilebaipai.html">Profile</a></li>
+                    <li><a href="educationbaipai.html">Education</a></li>
+                    <li><a href="interestbaipai.html">Interests</a></li>
+                    <li><a href="achievementsbaipai.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="index.html">H♡me</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-card">
+        <h1 class="page-title">Education</h1>
+
+        <div class="education-container">
+            <div class="edu-column">
+                <div class="edu-title">Middle School</div>
+                <div class="school-star-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWJT-lK51HhAQ9c7MG1CZ1h8PhkUJg63DyA&s" alt="wisutthikasattree Logo">
+                </div>
+                <span class="edu-info school-name">Wisutthikasattree School</span>
+                <span class="edu-info">Science Mathematics Technology and Environment program</span>
+            </div>
+
+            <div class="edu-column">
+                <div class="edu-title">High School</div>
+                <div class="school-star-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLWJT-lK51HhAQ9c7MG1CZ1h8PhkUJg63DyA&s" alt="wisutthikasattree Logo">
+                </div>
+                <span class="edu-info school-name">Wisutthikasattree School</span>
+                <span class="edu-info">Science Mathematics Technology and Environment program</span>
+            </div>
+
+            <div class="edu-column">
+                <div class="edu-title">University</div>
+                <div class="school-star-box">
+                    <img src="https://www.hr.kmitl.ac.th/wp-content/uploads/2020/08/cropped-kmitl-logoThai.png" alt="KMITL Logo">
+                </div>
+                <span class="edu-info school-name">KMITL</span>
+                <span class="edu-info">School of Food Industry</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

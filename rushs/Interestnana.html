@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana - Interests</title>
+
+    <style>
+        /* Specific Styles for the Interest Page */
+        .profile-card {
+            max-width: 1200px; 
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 30px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .page-title {
+            color: #B87C4C;
+            font-size: 3.5rem;
+            font-family: 'Monospace', courier;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+        }
+
+        .interest-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap; /* Allows cards to wrap if you add more than 3 */
+        }
+
+        .interest-column {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 25px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .interest-column:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(184, 124, 76, 0.15);
+            border-color: #CBDCEB;
+        }
+
+        .interest-title {
+            font-family: 'Monospace', courier;
+            font-size: 1.6rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #703B3B;
+            text-transform: uppercase;
+        }
+
+        /* Circle Image for Interests */
+        .interest-img-box {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Circular images for interests */
+            overflow: hidden;
+            border: 4px solid #CBDCEB;
+            transition: border-color 0.3s ease;
+        }
+
+        .interest-column:hover .interest-img-box {
+            border-color: #B87C4C;
+        }
+
+        .interest-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .interest-desc {
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #555;
+            padding: 0 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #F5EFE6;
+            color: #B87C4C;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Navigation Styles (Matching your nana.css) */
+        .sncf-nav {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #896C6C;
+            padding: 5px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #CBDCEB;
+        }
+
+        .menu-main {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu-item { position: relative; }
+        .menu-item > a {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 1.1em;
+        }
+
+        .menu-item:hover > a { background-color: #703B3B; border-radius: 40px; }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 200px;
+            background-color: white;
+            box-shadow: 0px 8px 25px rgba(0,0,0,0.15);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 100;
+            border-radius: 15px;
+            margin-top: 10px;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #703B3B;
+            text-decoration: none;
+            transition: background 0.2s;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .submenu li a:hover { background-color: #F5EFE6; color: #B87C4C; }
+        .menu-item:hover .submenu { display: block; }
+
+        @media (max-width: 768px) {
+            .interest-container { flex-direction: column; align-items: center; }
+            .interest-column { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sncf-nav">
+        <ul class="menu-main">
+            <li class="menu-item">
+                <a href="#">Nana</a>
+                <ul class="submenu">
+                    <li><a href="profilenana.html">Profile</a></li>
+                    <li><a href="educationnana.html">Education</a></li>
+                    <li><a href="Interestnana.html">Interest</a></li>
+                    <li><a href="achievementsnana.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#">Baipai</a>
+                <ul class="submenu">
+                    <li><a href="profilebaipai.html">Profile</a></li>
+                    <li><a href="educationbaipai.html">Education</a></li>
+                    <li><a href="interestbaipai.html">Interest</a></li>
+                    <li><a href="achievementsbaipai.html">Achievements</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="index.html">H♡me</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="profile-card">
+        <h1 class="page-title">Interests</h1>
+
+        <div class="interest-container">
+            <div class="interest-column">
+                <div class="interest-title">Cooking</div>
+                <div class="interest-img-box">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=400" alt="Cooking">
+                </div>
+                <p class="interest-desc">Exploring new recipes and the science behind food preparation in the kitchen.</p>
+                <span class="tag">#FoodScience</span>
+            </div>
+
+            <div class="interest-column">
+                <div class="interest-title">Travel</div>
+                <div class="interest-img-box">
+                    <img src="https://img.freepik.com/free-photo/full-shot-travel-concept-with-landmarks_23-2149153258.jpg?semt=ais_hybrid&w=740&q=80" alt="Coding">
+                </div>
+                <p class="interest-desc">Life is short and the world is wide.</p>
+                <span class="tag">#TravelGram</span>
+            </div>
+
+            <div class="interest-column">
+                <div class="interest-title">Shopping</div>
+                <div class="interest-img-box">
+                    <img src="https://media.istockphoto.com/id/1729402032/th/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B8%96%E0%B9%88%E0%B8%B2%E0%B8%A2/%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%AA%E0%B8%A7%E0%B8%A2%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%96%E0%B8%B7%E0%B8%AD%E0%B8%96%E0%B8%B8%E0%B8%87%E0%B8%8A%E0%B9%89%E0%B8%AD%E0%B8%9B%E0%B8%9B%E0%B8%B4%E0%B9%89%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%98%E0%B8%AD.jpg?s=612x612&w=0&k=20&c=OEzKj2qRTEqqfs0hooTmaoYLrsFDKn2h2-ukJ3WPixU=" alt="Photography">
+                </div>
+                <p class="interest-desc">Shopping is my cardio.</p>
+                <span class="tag">#Lifestyle</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
